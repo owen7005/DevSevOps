@@ -1,5 +1,6 @@
 #!/bin/bash
-#
+#Author : Zhang Zhigang  
+# Date : 2016-07-01 13:50
 # This script checks all alerts for check_mk-df on Check_MK,
 # then summarises the output.
 

@@ -1,5 +1,6 @@
 #!/bin/bash
-#!/bin/bash
+#Author : https://github.com/owen7005
+# Date : 2016-07-01 13:50
 # Program:system_init_shell
 # Create date:2013/05/14 
 # Qq mail:549651664@qq.com

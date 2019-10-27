@@ -1,5 +1,6 @@
 #! /bin/bash
-
+#Author : https://github.com/owen7005
+# Date : 2016-07-01 13:50
 BASEIP=$(ifconfig eth0 | grep "inet addr" | cut -d ":" -f 2 | cut -d " " -f 1 | awk -F'[.]' '{print $1 "." $2 "." $3 "."}')
 
 i=1

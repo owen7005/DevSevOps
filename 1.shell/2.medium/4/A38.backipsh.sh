@@ -1,7 +1,7 @@
 #! /bin/sh
 #logs_clenup.sh:Used to clean up logs
 #00 02 * * * /usr/local/scripts/logs_clenup.sh
-#writer Zhang Zhigang  18260621042
+#Author : https://github.com/owen7005
 #histor
 #2017.8.17
 # mkdir -p /usr/tomcat/tomcat_portal_web_8000/logsback

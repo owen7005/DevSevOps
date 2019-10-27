@@ -1,5 +1,6 @@
 #/bin/bash
-
+#Author : https://github.com/owen7005
+# Date : 2016-07-01 13:50
 echo -e "\033[30m 黑色字 \033[0m"
 echo -e "\033[31m 红色字 \033[0m"
 echo -e "\033[32m 绿色字 \033[0m"

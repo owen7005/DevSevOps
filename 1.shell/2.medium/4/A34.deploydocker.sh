@@ -1,6 +1,6 @@
 #! /bin/sh
 #deploydocker.sh:Used to deploy
-#writer Zhang Zhigang  1229216571@qq.com
+#writer 
 #histor
 #2017.12.24
 ########PATH########################################################
