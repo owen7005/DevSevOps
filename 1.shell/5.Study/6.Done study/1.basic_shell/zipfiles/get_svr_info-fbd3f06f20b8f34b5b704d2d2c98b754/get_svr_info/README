@@ -1,0 +1,32 @@
+基本信息：
+功能：获取当前服务器的cpu/mem等信息
+类型：脚本工具
+版本号：0.1
+开发语言：Bash
+文件大小：3KB
+OS版本兼容：Centos6.5/Centos7.0/Ubuntu14.04/Debian8.2
+部署环境：Linux
+语言支持：en_US.UTF-8
+
+详情：
+使用方法：./get_svr_info.sh
+使用示例：./get_svr_info.sh
+CPU:
+        model name:     Intel(R) Xeon(R) CPU E5-26xx v2
+        cpu MHz:        2593.748
+        cache size:     4096 KB
+        cores cnt:      1
+
+MEM:
+        Mem:    1000
+        Swap:   0
+
+DISK:
+        /dev/vda1:      20G
+
+OS:
+        Description:    Debian GNU/Linux 8.2 (jessie)
+        Kernel Version: 3.16.0-4-amd64
+        Started Since:  2017-01-16 21:53:16
+        Module Loadable:        Yes
+        Iptables Rules: Off

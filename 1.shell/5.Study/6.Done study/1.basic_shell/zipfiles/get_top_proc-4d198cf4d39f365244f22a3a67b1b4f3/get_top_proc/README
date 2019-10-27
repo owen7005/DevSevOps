@@ -1,0 +1,29 @@
+基本信息：
+功能：输出系统当前占用资源（cpu、内存等）最多的Top10进程
+类型：脚本工具
+版本号：0.1
+开发语言：Bash
+文件大小：4KB
+OS版本兼容：Centos6/Centos7/Ubuntu14.04/Debian8.2
+部署环境：Linux
+语言支持：en_US.UTF-8
+
+详情：
+使用方法：./get_top_proc.sh <type> [optional output fields]
+    <type>: 指定排序类型，可选: cpu mem
+    [optional output fields]: 指定输出结果其他的进程字段，分号分隔，参考man 1 ps
+
+执行结果示例：
+
+    # ./get_top_proc.sh mem 
+
+    %CPU %MEM   RSS   PID USER     COMMAND
+    0.0  1.9 19568   686 root     splunkd 
+    0.1  1.4 14468   824 root     nginx
+    0.1  1.3 14264 25580 root     awk
+    0.1  1.3 14000  2987 root     grep
+    0.0  1.3 13516   823 root     nginx
+    0.0  1.0 11084   816 root     nginx
+    0.0  0.5  5880 11665 root     sshd: root@pts/1
+    0.0  0.5  5760 19347 root     sshd: root@pts/0
+    0.1  0.4  4916 11667 root     -bash

@@ -1,0 +1,26 @@
+基本信息：
+功能：获取指定服务端口的统计信息
+类型：脚本工具
+版本号：0.1
+开发语言：Bash
+文件大小：3KB
+OS版本兼容：Centos6.5/Centos7.0/Ubuntu14.04/Debian8.2
+部署环境：Linux
+语言支持：en_US.UTF-8
+
+详情：
+使用方法：./get_svr_info.sh [-h] [-i ip] -p <port>
+    port: 指定需要获取相关信息的端口号
+    -h：帮助信息
+    -i：端口的监听ip
+    -p：端口号
+    
+
+使用示例：
+    ./get_svr_info.sh -p 22
+    Listen ip:      192.168.0.1
+    Protocol:       tcp
+    Port:   22
+    Service:
+    Connections:
+            ESTAB:  10

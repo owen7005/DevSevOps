@@ -1,0 +1,19 @@
+基本信息：
+功能：根据指定目录，查找出目录下占用空间最大的top N目录和文件，如果没有指定top N，默认为top 10
+类型：脚本工具
+版本号：0.1
+开发语言：Bash
+文件大小：3KB
+OS版本兼容：Centos6.5/Centos7.0/Ubuntu14.04/Debian8.2
+部署环境：Linux
+语言支持：en_US.UTF-8
+
+详情：
+使用方法：find_disk_usage.sh <directory> [top N]
+    <directory>: 指定文件夹路径
+    [top N]: 指定只列出top N，默认为10
+使用示例：
+    ./find_disk_usage.sh  /data/test 2
+    File or directory disk usage top 2:
+    Top.1   28(MB)  Directory       /data/test/logs
+    Top.2   25(MB)  File    /data/test/logs/test.log

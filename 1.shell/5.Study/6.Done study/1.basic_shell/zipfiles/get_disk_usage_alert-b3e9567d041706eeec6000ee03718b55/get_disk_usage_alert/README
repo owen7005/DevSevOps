@@ -1,0 +1,32 @@
+基本信息：
+功能：获取Linux服务器磁盘使用率，可以设置告警阈和邮件告警值进行磁盘监控
+类型：脚本工具
+版本号：0.1
+开发语言：Bash
+文件大小：8KB
+OS版本兼容：Centos6.5/Centos7.0/Ubuntu14.04/Debian8.2
+部署环境：Linux
+语言支持：en_US.UTF-8
+
+详情：
+使用方法：
+open_mail_alert字段设置为1时：
+	./get_disk usage_alert.sh [File_system|Mounted_on]
+	根据Filesystem（例如：/dev/sda1）或 Mounted on（例如：/data）获取磁盘使用率
+	输出Disk usage（例如：15%）；如果没有输入参数则输出全部Disk usage，Mounted_on信息
+				 
+open_mail_alert字段设置为0时：
+	./get_disk usage_alert.sh [-i|-u]
+	监控monitor_mount_dir字段中定义的监控分区，添加到crontab中，当分区超过使用率时，发出邮件告警(一般使用QQ邮箱需要使用ssl方式发送邮件，163邮件使用普通方式就OK)
+  
+使用示例：
+获取磁盘使用率：
+	./get_disk_usage_alert.sh  /data
+	2017-04-01 18:24:32|24254|81|info|job success: 14%
+	
+添加邮件告警：
+	./get_disk usage_alert.sh -i
+
+删除邮件告警：
+	./get_disk usage_alert.sh -u
+

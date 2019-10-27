@@ -1,0 +1,33 @@
+基本信息：
+功能：根据进程名或PID或进程命令行参数查询进程，并输出相关进程信息
+类型：脚本工具
+版本号：0.1
+开发语言：Bash
+文件大小：4KB
+OS版本兼容：Centos6/Centos7/Ubuntu14.04/Debian8.2
+部署环境：Linux
+语言支持：en_US.UTF-8
+
+详情：
+使用方法：./get_proc_stat.sh <type> [value]
+    <type>: 指定查找类型，可选: name(按进程名), pid(按进程id), arg(按进程执行参数)
+    [value]: 指定查找的条件，如果有特殊字符，请使用引号
+
+执行结果示例：
+    字段名含义：
+    PID: 进程ID
+    COMMAND: 进程名
+    USER: 执行用户
+    %CPU: CPU使用率
+    RSS: 实际使用物理内存
+    STAT: 进程状态
+    STARTED: 进程启动时间
+    CWD: 进程启动时的工作目录
+    FH: 打开文件句柄数，NOACCESS表示权限不足
+    CHD: 子进程数量
+
+    # ./get_proc_stat.sh name rsync 
+
+    PID COMMAND         USER     %CPU   RSS STAT                  STARTED CWD                   FH        CHD
+    13676 rsync           root      0.0    96 Ss   Mon May 19 16:03:52 2014 NULL                  NOACCESS  0
+    14516 rsync           20036     0.0   440 Ss   Wed Dec 30 15:57:14 2015 /home/test  4 0
