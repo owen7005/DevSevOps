@@ -1,6 +1,6 @@
 #!/bin/bash
-# Author :tanbin
-# Date : 2016-06-24 10:50
+#Author : https://github.com/owen7005
+# Date : 2016-07-01 13:50
 # Des : The scripts is rsync logs to nginx web
 # Use : sh rsync_logs.sh
 #

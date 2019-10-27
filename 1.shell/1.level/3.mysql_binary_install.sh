@@ -1,4 +1,6 @@
 #!/bin/bash
+##Author : https://github.com/owen7005
+# Date : 2016-07-01 13:50
 MYSQL_VERSION=5.6
 MYSQL_PKG=mysql-5.6.31-linux-glibc2.5-x86_64.tar.gz
 USER=mysql

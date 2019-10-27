@@ -1,7 +1,6 @@
 #!/bin/bash
-# Author :tanbin
+#Author : https://github.com/owen7005
 # Date : 2016-07-01 13:50
-# Des : The scripts is check fsd tomcat error log
 # Use : sh check-tomcat-errorlog.sh
 #
 DATE=`date +%Y-%m-%d` #日期

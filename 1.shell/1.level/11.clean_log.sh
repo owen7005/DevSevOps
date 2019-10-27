@@ -1,7 +1,6 @@
 #!/bin/sh
-#Author : Zhang Zhigang  
+#Author : https://github.com/owen7005
 # Date : 2016-07-01 13:50
-# Des : The scripts is
 #清理日志
 max=`df -h |awk 'NR==4''{print $5 }'| cut -d% -f1`
 if [ "$max" -gt 75 ];then
