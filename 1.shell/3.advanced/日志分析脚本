@@ -1,0 +1,10 @@
+1、QPS——通过nginx日志计算当前服务器的qps
+tail -f /usr/local/nginx/logs/shuaji_access.log | awk '{print $4}' | uniq -c
+2、查看TCP链接状态
+netstat -n|awk '/^tcp/{++S[$NF]}END{for(a in S)print a,S[a]}'
+3、清除几天内日志
+find /home/work/logs -mtime +1 -name "*.*" -exec rm -rf {} \;
+4、动态查看当前request请求的状态
+tail -f /usr/local/nginx/logs/shuaji_access.log | awk '{if($9!=200) print$9}'
+5、查看nginx请求时间大于2秒的请求
+tail -f /usr/local/nginx/logs/shuaji_access.log | awk '{if($NF>2)print $0}'
