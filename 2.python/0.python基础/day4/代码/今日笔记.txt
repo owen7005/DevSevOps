@@ -1,0 +1,336 @@
+前日回顾
+    1、与用户交互
+        输入：
+            python2：
+                input():在接受用户输入的时候，必须指定数据类型，否则就报错
+                raw_input():与python3的input,接受用户输入，返回字符串
+            python3：
+                input():接受用户输入，返回字符串
+        输出：
+            python2:
+                print '要打印的内容'  # print+要打印的语句
+
+            python3:
+                print("你要打印的内容")  # print自带换行符 可以通过end=""替换换行符
+
+    2、格式化输出：
+        1、占位符
+            # 默认按照顺序传值
+            %s # 接受任意类型的值，s一定要小写
+            %d # 接受整数
+            %f # 接受浮点数
+
+        2、.format():
+            通过大括号接受用户传入的变量
+            "{},{}".format(name,age)
+
+           "{name},{age}".format(name='sean',age=18)
+
+           "{0},{1}",format(name,age)
+
+        3、f-string
+            通过大括号接受用户传入的变量。字符串前一定要加一个f
+
+            python3.6以后的特性
+
+            f"{name},{age}"
+
+    3、基本数据类型
+
+        1、数字类型
+           整型：int
+           作用：qq号，身份证号
+
+           age = 18  # age = int(18)
+
+           浮点型:float
+
+           z作用：薪资，身高、、
+
+           height = 1.80  # height = float(1.80)
+
+        2、字符串：str
+            作用：记录一些描述信息
+
+            name = 'sean' name = str('sean')
+
+            ''
+            ""
+
+            '''
+            '''
+
+            """
+            """
+            字符串的引号数量没有区别，不能混用
+
+            Python2:
+                str本质其实是一个8个bit位的序列
+            python3：
+                str本质unicode的序列
+
+
+        3、列表：list
+            作用：记录一个或多个不同类型的值
+            定义：通过中括号存储数据，每一个数据之间通过逗号分隔
+
+            hobby = ['唱','跳','rap']
+
+            列表的取值通过索引来取
+            索引从0开始
+
+        4、字典：dict
+            作用：明确的指定数据
+            定义：通过大括号存储数据，通过key：value这个映射关系存储键值对，每个键值对通过逗号分隔
+
+            info = {"name":"sean",'age':18}
+
+            字典取值：通过key：value的映射关系来取
+            info['name']-->sean
+
+        5、布尔值：bool
+            True False
+
+            补充：is_
+                is_success
+                is_delete
+                is_exits
+
+    4、运算符：
+        算数运算：
+            //
+            %
+            **
+            ...
+        比较运算符：
+            <
+            <=
+            >=
+            ..
+        逻辑运算符：
+            与或非
+            and
+            or
+            not
+
+        赋值：
+            增量赋值：
+                +=
+                -=
+                ...
+            链式赋值：
+                a = b = c = 1
+
+            交叉赋值：
+                m = 1
+                n = 2
+                m, n = n, m
+
+            解压赋值：
+                l1 = [1,2,3,4,5]
+                a = l1[0]
+
+                a, b, c,*_ = l1
+
+                *_,a,b,c = l1
+
+                *_:接收溢出的数据
+
+
+本周任务：
+    1、
+        流程控制
+    2、
+    3、
+        数据类型的内置方法
+            数字类型
+            字符串
+            列表
+            元组
+            字典
+            集合
+    4、字符编码
+        文件
+    5、文件
+        函数
+    6、 函数的返回值
+        函数参数
+
+
+今日笔记：
+    流程控制：
+        if  *****
+        while  *****
+        for  *****
+
+    if：
+       什么是if？
+        主要是用于判断事物得对错，真假，是否可行
+
+        编程的主要目的就是让机器帮助人类工作？
+            首先，机器需要判断能力
+
+
+        语法结构：
+            python是通过缩进来决定代码的归属
+            pep8：
+                缩进一定是四个空格
+                tab键
+            if 条件:
+                代码块
+                ....
+                ....
+            if gender == 'female' and 24 > age > 18 and is_beautiful:
+                print("小姐姐，给个微信")
+
+            if 条件：
+                代码块1
+                。。。
+            else:
+                代码块2
+                。。
+            if gender == 'female' and 24 > age > 18 and is_beautiful:
+                print("小姐姐，给个微信")
+            else:  # 条件不成立将要执行的代码块
+                print('打扰了')
+
+
+
+            if 条件1：
+                代码块1
+                。。。
+            elif 条件2：
+                代码块2
+            elif 条件2：
+                代码块2
+            elif 条件2：
+                代码块2
+            elif 条件2：
+                代码块2
+            else：
+                代码块n
+
+            if gender == 'female' and 24 > age > 18 and is_beautiful:
+                print("小姐姐，给个微信")
+            # 在这个流程控制语句中可以加n多个elif
+            elif gender == 'female' and 30 > age > 18 and is_beautiful:
+                print("认识一下")
+            elif 30 > age > 18 and is_beautiful:
+                print("认识一下")
+            else:  # 条件不成立将要执行的代码块
+                print('打扰了')
+
+            if ... elif ... else:
+            同一个代码结构里面只会执行一个
+            执行if就不会执行elif和else，
+            执行elif就不会执行if和else，执行else就不会执行if和elif
+
+
+            """
+            模拟认证功能：
+                1、接收用户的输入
+                2、判断用户的输入解果
+                3、返回数据
+            """
+            from_db_username = 'sean'
+            from_db_password = '123'
+
+            username = input("please input your username>>:")
+            password = input("please input your password>>:")
+
+            if username == from_db_username and password == from_db_password:
+                print('登录成功')
+            else:
+                print("登录失败")
+
+
+        if 嵌套：
+            # 在表白的基础上继续：
+            # 如果表白成功，那么：在一起
+            # 否则：打印。。。
+
+            gender = 'female'
+            age = 20
+            is_beautiful = True
+            is_success = True
+
+            if gender == 'female' and 24 > age > 18 and is_beautiful:
+                print("小姐姐，给个微信")
+                if is_success:
+                    print("在一起")
+                else:
+                    print('滚')
+            # 在这个流程控制语句中可以加n多个elif
+            elif gender == 'female' and 30 > age > 18 and is_beautiful:
+                print("认识一下")
+            else:  # 条件不成立将要执行的代码块
+                print('打扰了')
+
+        补充：
+            可以当做False来使用的：
+                0
+                None
+                ""
+                []
+                {}
+
+    while：
+        语法结构：
+            while 条件：
+                条件成立将要循环的代码块
+
+            # continue：跳过本次循环，执行下一次循环  *****
+            # continue下面不管有多少行代码，都不会执行
+
+            # break:结束本层循环，单纯指代当前while  *****
+            # 只能结束一层循环
+            # 死循环
+            count = 0
+            while True:
+                print(count)
+                count+=1
+            while+嵌套：
+
+                from_db_password = '123'
+                count = 0
+                tag = True
+                while tag:
+                    username = input("please input your username>>:")
+                    password = input("please input your password>>:")
+                    if username == from_db_username and password == from_db_password:
+                        print('登录成功')
+                        while tag:
+                            cmd = input(">>>:")
+                            if cmd == 'exit':
+                                tag = ''
+                            else:
+                                print(f"执行{cmd}指令")
+                    else:
+                        print("登录失败")
+                        count += 1
+                    if count == 3:
+                        print('锁定账户')
+                        tag = 0
+
+    for：
+        # for:给我们提供了一种不依赖于索引的取值方式
+        语法结构：
+            for 变量 in 容器类型:
+            # 容器对象中有几个值，他就循环几次
+
+            字典对象，直接访问无法访问值value
+
+            for + continue
+
+            for + break
+
+            for + else
+            # for循环正常执行结束，就会执行else对应的代码块
+            # 非正常结束，例如break打断，就不会执行
+
+        for循环的嵌套：
+
+            for i in range(1,10):
+                for j in range(1,i+1):
+                    print(f"{i}x{j}={i*j}",end="")
+                print()
