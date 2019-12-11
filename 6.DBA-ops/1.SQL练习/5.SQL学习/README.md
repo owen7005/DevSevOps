@@ -1,0 +1,32 @@
+# Mysql-crashcourse
+## Mysql基础学习笔记
+- Chapter1 了解SQL
+- Chapter2 MySQL简介
+- Chapter3 使用MySQL
+- Chapter4 检索数据
+- Chapter5 排序检索数据
+- Chapter6 过滤数据
+- Chapter7 数据过滤
+- Chapter8 用通配符进行过滤
+- Chapter9 用正则表达式进行搜索
+- Chapter10 创建计算字段
+- Chapter11 使用数据处理函数
+- Chapter12 汇总数据
+- Chapter13 分组数据
+- Chapter14 使用子查询
+- Chapter15 联结表
+- Chapter16 创建高级联结
+- Chapter17 组合查询
+- Chapter18 全文本搜索
+- Chapter19 插入数据
+- Chapter20 更新和删除数据源
+- Chapter21 创建和操纵表
+- Chapter22 使用视图
+- Chapter23 使用存储过程
+- Chapter24 使用游标
+- Chapter25 使用触发器
+- Chapter26 管理事务处理
+- Chapter27 全球化和本地化
+- Chapter28 安全管理
+- Chapter29 数据库维护
+- Chapter30 改善性能
