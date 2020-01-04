@@ -1,0 +1,200 @@
+
+<% include head %>
+<!--<div id="wrapper">-->
+<% include nav %>
+<!-- /.内容-->
+<div id="page-wrapper">
+    <div class="row">
+        <br/>
+    </div>
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">
+                SSL检测
+            </div>
+            <div class="panel-body">
+                <form role="form">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-3 text-right">
+                                <label>主机地址</label>
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" placeholder="请输入主机名称或IP" name="host" id="host">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-3 text-right">
+                                <label>端口</label>
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" placeholder="默认端口443" name="port" id="port">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col-lg-4">
+                    </div>
+                    <div class="col-lg-4">
+                        <button type="button" class="btn btn-primary  btn-lg btn-block" id = "start">开始扫描</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12" id="ssl-result">
+        <div class="panel panel-default" >
+            <div class="panel-heading">
+                检测结果
+            </div>
+            <div class="panel-body">
+                <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
+                  <ul class="nav nav-tabs" id="myTabs" role="tablist">
+                    <li role="presentation" class="active">
+                      <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">总览</a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#subject" role="tab" id="subject-tab" data-toggle="tab" aria-controls="subject">证书主体信息</a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#issuer" role="tab" id="issuer-tab" data-toggle="tab" aria-controls="issuer">发证者信息</a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#misc" role="tab" id="misc-tab" data-toggle="tab" aria-controls="misc">其它信息</a>
+                    </li>
+                    <li role="presentation" class="dropdown">
+                      <a href="#ssl-path" id="ssl-path-tab" data-toggle="tab" aria-controls="ssl-path">证书路径</a>
+                      </ul>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade in active" role="tabpanel" id="home" aria-labelledby="home-tab">
+                      <p class="feature-item "><span id="authority" class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 证书来源于权威机构</p>
+                      <p class="feature-item "><span id="noexpire" class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 证书时间有效</p>
+                      <p class="feature-item "><span id="hostname" class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 证书主体身份与实际相吻合</p>
+                      <p class="feature-item cipher"><span id="cipher" class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 证书加密强度符合要求</p>
+                    </div>
+                    <div class="tab-pane fade" role="tabpanel" id="subject" aria-labelledby="subject-tab">
+                      <form class="form-horizontal">
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">国家</label>
+                          <div class="col-sm-10">
+                            <p class="form-control-static country" ></p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">省／市／自治区</label>
+                          <div class="col-sm-10">
+                            <p class="form-control-static state" ></p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">所在地</label>
+                          <div class="col-sm-10">
+                            <p class="form-control-static local" ></p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">组织单位</label>
+                          <div class="col-sm-10">
+                            <p class="form-control-static ou"></p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">组织</label>
+                          <div class="col-sm-10">
+                            <p class="form-control-static o" id="o"></p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">常用名称</label>
+                          <div class="col-sm-10">
+                            <p class="form-control-static cn"></p>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+
+                    <div class="tab-pane fade" role="tabpanel" id="issuer" aria-labelledby="issuer-tab">
+                      <form class="form-horizontal">
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">国家</label>
+                          <div class="col-sm-10">
+                            <p class="form-control-static country"></p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">组织单位</label>
+                          <div class="col-sm-10">
+                            <p class="form-control-static ou"></p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">组织</label>
+                          <div class="col-sm-10">
+                            <p class="form-control-static o"></p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">常用名称</label>
+                          <div class="col-sm-10">
+                            <p class="form-control-static cn"></p>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+
+                    <div class="tab-pane fade" role="tabpanel" id="misc" aria-labelledby="misc-tab">
+                      <form class="form-horizontal">
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">有效期开始于</label>
+                          <div class="col-sm-10">
+                            <p class="form-control-static from"></p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">有效期结束于</label>
+                          <div class="col-sm-10">
+                            <p class="form-control-static to"></p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">公钥算法</label>
+                          <div class="col-sm-10">
+                            <p class="form-control-static cipher"></p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">公钥位数</label>
+                          <div class="col-sm-10">
+                            <p class="form-control-static pub-key-len"></p>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">公共密钥</label>
+                          <div class="col-sm-10">
+                            <textarea class="form-control pub-key-val" rows="8" ></textarea>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+
+                    <div class="tab-pane fade" role="tabpanel" id="ssl-path" aria-labelledby="ssl-path-tab">
+                      <ul class="list-group" id="cert-chain">
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% include loading %>
+
+</div>
+<% include ssl_exec_js %>
+<!-- /.内容-->
+<!--</div>-->
+<% include foot %>
